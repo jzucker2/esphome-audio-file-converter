@@ -21,6 +21,27 @@ sox --help
 xxd --help
 ```
 
+## Simple Dockerfile
+
+```dockerfile
+FROM debian:bullseye-slim
+
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    audacity \
+    sox \
+    vim-common \
+    && apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# xxd is part of vim-common package in Debian/Ubuntu
+# Clean up to keep image small
+
+# Set entrypoint
+ENTRYPOINT ["/bin/bash"]
+```
+
 ## Notes
 
 * https://hub.docker.com/r/linuxserver/audacity
