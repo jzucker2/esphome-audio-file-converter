@@ -1,0 +1,16 @@
+services:
+
+  esphome-audio-file-converter:
+    container_name: esphome-audio-file-converter
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - DEBUG=true
+    ports:
+      - "4242:4242"
+    stdin_open: true
+    tty: true
