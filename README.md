@@ -42,6 +42,8 @@ RUN apt-get update && \
 ENTRYPOINT ["/bin/bash"]
 ```
 
+Consider turning into multi-stage build
+
 ## Notes
 
 * https://hub.docker.com/r/linuxserver/audacity
