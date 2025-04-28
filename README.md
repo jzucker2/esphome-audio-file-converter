@@ -20,3 +20,7 @@ audacity --help
 sox --help
 xxd --help
 ```
+
+## Notes
+
+* https://hub.docker.com/r/linuxserver/audacity
